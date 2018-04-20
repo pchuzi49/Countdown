@@ -18,24 +18,12 @@ def countdown():
     #are the same the loop will be exited
     while days != datetime.datetime.now():
         time_delta = (datetime.datetime(year,month,day) - datetime.datetime.now())
-        print(str(time_delta)[:-7], event,'!')
-        
-        #This can be used to print with 'hrs','mins', and 'secs' next to numbers
-        """
-        sec = time_delta.seconds % 60
-        mins = time_delta.seconds // 60
-        
-        hrs = mins // 60
-        mins = mins % 60
-        print(time_delta.days,'days',hrs,'hrs', mins,'mins', sec,'secs','\n')
-        print('Until Graduation!!')
-        print()
-        """
-        
+        print("{} until {}!".format(str(time_delta)[:-7], event.strip()))
+                
         time.sleep(1)
         print("\033c")
         
 
-    print('Happy Graduation!!')
+
 
 countdown()
